@@ -6,7 +6,7 @@
 #    By: vbusekru <vbusekru@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/12/06 12:23:58 by vbusekru      #+#    #+#                  #
-#    Updated: 2023/12/20 12:51:54 by vbusekru      ########   odam.nl          #
+#    Updated: 2023/12/29 15:45:06 by vbusekru      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,10 @@ NAME = libftprintf.a
 
 SOURCES_MAND =	ft_printf.c \
 				main.c \
-				ft_write_char.c \
-				ft_write_str.c \
-				ft_write_int.c \
-				ft_write_ptr.c \
+				ft_write_various.c \
 				ft_write_hexa.c \
 				ft_write_unsigned_int.c \
 				Libft/ft_itoa.c \
-				Libft/ft_putchar_fd.c \
 				Libft/ft_putstr_fd.c \
 				Libft/ft_calloc.c \
 				Libft/ft_memset.c \
@@ -29,7 +25,6 @@ SOURCES_MAND =	ft_printf.c \
 				Libft/ft_strlcpy.c \
 				Libft/ft_strlen.c \
 				Libft/ft_strjoin.c \
-				Libft/ft_toupper.c \
 
 OBJS_MAND = $(SOURCES_MAND:.c=.o)
 

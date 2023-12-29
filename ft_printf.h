@@ -6,7 +6,7 @@
 /*   By: vbusekru <vbusekru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/07 12:01:59 by vbusekru      #+#    #+#                 */
-/*   Updated: 2023/12/28 12:27:11 by vbusekru      ########   odam.nl         */
+/*   Updated: 2023/12/29 15:27:10 by vbusekru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,9 @@ int		ft_formats(const char *str, va_list args);
 int		ft_write_char(int c);
 int		ft_write_str(char *str);
 int		ft_write_int(int n);
-int		ft_write_ptr(void *ptr);
-char	*ft_pointer_itoa(uintptr_t n);
-int		ft_count_ptr_hexadecimals(uintptr_t n);
-int		ft_write_hexa(int n, char c);
-char	*ft_hexadecimal_itoa(unsigned int n);
-int		ft_count_hexadecimals(unsigned int n);
-int		ft_write_unsigned_int(unsigned int n);
-char	*ft_unsigned_itoa(unsigned int n);
-int		ft_count_unsigned_digit(unsigned int n);
+int		ft_ptr_itoa(unsigned long n);
+int		ft_hexitoa(unsigned int n, const char c);
+int		ft_hexnb_len(unsigned long n);
+int		ft_uitoa(unsigned int n);
+int		ft_nb_len(unsigned int n);
 #endif
