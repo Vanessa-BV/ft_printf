@@ -50,7 +50,7 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (*str != '\0')
 	{
-		if (*str == '%')
+		if (*str == '%') // && *(str + 1 != '\0') ? then ft_formats needs to be adjusted
 		{
 			str++;
 			n = ft_formats(str, args);
