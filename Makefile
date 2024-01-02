@@ -28,6 +28,7 @@ SOURCE =	ft_printf.c \
 				ft_write_various.c \
 				ft_write_hexa.c \
 				ft_write_unsigned_int.c \
+				main.c \
 
 OBJECTS = $(SOURCE:%.c=%.o)
 
@@ -50,6 +51,9 @@ clean:
 fclean: clean
 	$(MAKE) fclean -C $(LIBFTDIR)
 	$(RM) $(NAME)
+
+compile: all
+	$(CC) $(CFLAGS) main.c $(NAME)
 
 re: fclean all
 
