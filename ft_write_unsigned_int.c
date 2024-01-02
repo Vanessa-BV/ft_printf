@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: vbusekru <vbusekru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/12/20 12:27:10 by vbusekru      #+#    #+#                 */
-/*   Updated: 2023/12/29 14:37:55 by vbusekru      ########   odam.nl         */
+/*   Created: 2024/01/02 10:15:50 by vbusekru      #+#    #+#                 */
+/*   Updated: 2024/01/02 10:15:50 by vbusekru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,3 @@ int	ft_uitoa(unsigned int n)
 	free(str);
 	return (len);
 }
-

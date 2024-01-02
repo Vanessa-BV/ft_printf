@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: vbusekru <vbusekru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/12/20 11:50:58 by vbusekru      #+#    #+#                 */
-/*   Updated: 2023/12/29 15:28:18 by vbusekru      ########   odam.nl         */
+/*   Created: 2024/01/02 10:14:55 by vbusekru      #+#    #+#                 */
+/*   Updated: 2024/01/02 10:14:55 by vbusekru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ int	ft_formats(const char *str, va_list args)
 	int		count;
 
 	count = 0;
-	if (*str == '\0')
-		return (-1);
-	else if (*str == 'c')
+	if (*str == 'c')
 		count += ft_write_char(va_arg(args, int));
 	else if (*str == 's')
 		count += ft_write_str(va_arg(args, char *));
@@ -50,7 +48,7 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (*str != '\0')
 	{
-		if (*str == '%') // && *(str + 1 != '\0') ? then ft_formats needs to be adjusted
+		if (*str == '%' && (*str + 1 != '\0'))
 		{
 			str++;
 			n = ft_formats(str, args);

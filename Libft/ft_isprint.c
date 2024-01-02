@@ -1,44 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_write_various.c                                 :+:    :+:            */
+/*   ft_isprint.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: vbusekru <vbusekru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/01/02 10:16:07 by vbusekru      #+#    #+#                 */
-/*   Updated: 2024/01/02 10:16:07 by vbusekru      ########   odam.nl         */
+/*   Created: 2023/10/09 17:01:16 by vbusekru      #+#    #+#                 */
+/*   Updated: 2023/10/09 17:01:16 by vbusekru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_write_int(int n)
+int	ft_isprint(int c)
 {
-	int		count;
-	char	*str;
-
-	count = 0;
-	str = ft_itoa(n);
-	if (str == NULL)
-		return (0);
-	count = ft_strlen(str);
-	ft_putstr_fd(str, 1);
-	free(str);
-	return (count);
-}
-
-int	ft_write_str(char *str)
-{
-	if (str == NULL)
-		str = "(null)";
-	ft_putstr_fd(str, 1);
-	return (ft_strlen(str));
-}
-
-int	ft_write_char(int c)
-{
-	if (write(1, &c, 1) == -1)
-		return (-1);
-	else
+	if (c >= 32 && c <= 126)
 		return (1);
+	else
+		return (0);
 }
+
+// int	main(void)
+// {
+// 	printf("The output is: %d\n", ft_isprint(127));
+// 	printf("The output is: %d\n", isprint(127)); //to be checked
+// 	return(0);
+// }

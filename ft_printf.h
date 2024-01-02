@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: vbusekru <vbusekru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/12/07 12:01:59 by vbusekru      #+#    #+#                 */
-/*   Updated: 2023/12/29 15:27:10 by vbusekru      ########   odam.nl         */
+/*   Created: 2024/01/02 10:15:14 by vbusekru      #+#    #+#                 */
+/*   Updated: 2024/01/02 10:15:14 by vbusekru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <limits.h>
-# include <stdint.h>
 
 int		ft_printf(const char *str, ...);
 int		ft_formats(const char *str, va_list args);

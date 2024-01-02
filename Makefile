@@ -5,58 +5,52 @@
 #                                                      +:+                     #
 #    By: vbusekru <vbusekru@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2023/12/06 12:23:58 by vbusekru      #+#    #+#                  #
-#    Updated: 2023/12/29 15:45:06 by vbusekru      ########   odam.nl          #
+#    Created: 2024/01/02 10:16:29 by vbusekru      #+#    #+#                  #
+#    Updated: 2024/01/02 10:16:29 by vbusekru      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SOURCES_MAND =	ft_printf.c \
-				main.c \
+LIBFT = Libft/libft.a
+
+LIBFTDIR = Libft
+
+CC = cc
+
+CFLAGS = -Wall -Wextra -Werror
+
+RM = rm -f
+
+AR = ar -rsc
+
+SOURCE =	ft_printf.c \
 				ft_write_various.c \
 				ft_write_hexa.c \
 				ft_write_unsigned_int.c \
-				Libft/ft_itoa.c \
-				Libft/ft_putstr_fd.c \
-				Libft/ft_calloc.c \
-				Libft/ft_memset.c \
-				Libft/ft_bzero.c \
-				Libft/ft_strlcpy.c \
-				Libft/ft_strlen.c \
-				Libft/ft_strjoin.c \
 
-OBJS_MAND = $(SOURCES_MAND:.c=.o)
-
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-
-ifdef DEBUG
-CFLAGS += -g
-endif
-
-AR = ar
+OBJECTS = $(SOURCE:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS_MAND)
-	$(AR) rcs $(NAME) $(OBJS_MAND)
+$(LIBFT):
+	$(MAKE) -C $(LIBFTDIR)
+	
+$(NAME): $(LIBFT) $(OBJECTS)
+	cp $(LIBFT) $(NAME)
+	$(AR) $(NAME) $(OBJECTS) $(LIBFT)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+%.o:%.c 
+	$(CC) $(CFLAGS) -c -o $@ $^ -I $(LIBFTDIR)
 
-clean:
-	rm -f $(OBJS_MAND) $(OBJS_BONUS)
+clean: 
+	$(MAKE) clean -C $(LIBFTDIR)
+	$(RM) $(OBJECTS)
 
-fclean:clean
-	rm -f $(NAME)
-
-compile: all
-	$(CC) $(CFLAGS) main.c $(NAME)
-
-debug:
-	make DEBUG=1 compile
+fclean: clean
+	$(MAKE) fclean -C $(LIBFTDIR)
+	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re

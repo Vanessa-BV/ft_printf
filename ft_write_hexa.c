@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: vbusekru <vbusekru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/12/20 12:23:01 by vbusekru      #+#    #+#                 */
-/*   Updated: 2023/12/29 15:44:16 by vbusekru      ########   odam.nl         */
+/*   Created: 2024/01/02 10:15:32 by vbusekru      #+#    #+#                 */
+/*   Updated: 2024/01/02 10:15:32 by vbusekru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_hexitoa(unsigned int n, const char c)
 	else if (c == 'X')
 		base = "0123456789ABCDEF";
 	if (n == 0)
-		return(ft_write_char('0'));
+		return (ft_write_char('0'));
 	hex_len = ft_hexnb_len(n);
 	str = (char *)ft_calloc((hex_len + 1), sizeof(char));
 	if (str == NULL)
@@ -59,13 +59,13 @@ int	ft_ptr_itoa(unsigned long n)
 
 	base = "0123456789abcdef";
 	if (n == 0)
-		return (ft_write_str("0x0")); //should be "nil"?
+		return (ft_write_str("(nil)"));
 	else
 	{
 		ptr_len = ft_hexnb_len(n);
 		str = (char *)ft_calloc((ptr_len + 1), sizeof(char));
 		if (str == NULL)
-			return (ft_write_str("nil")); //not sure! 
+			return (-1);
 		while (n > 0)
 		{
 			str[--ptr_len] = base[n % 16];
