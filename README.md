@@ -6,8 +6,6 @@ The task involves recreating the functionality of the printf() function from the
 ## Project Overview
 The goal is to implement an own version of the printf() function, named ft_printf(). The function prototype is:
 
-c
-Copy code
 int ft_printf(const char *, ...);
 
 ## Requirements
